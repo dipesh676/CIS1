@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Criminal View </title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+</head>
+
+<body background="Meditation(3).jpg">
+<div ><h1 align="center"> Criminals Information</h1>
+<h3><a href="/homes"> <img src ='http://orig03.deviantart.net/0631/f/2010/237/5/d/dock_icon_home_button_by_moa_isa_jediknight.png' width="100" height="100"  >  </a><a href="/fir"> <img src ='https://fanart.tv/fanart/music/a8251b7f-2ea9-4661-89c1-0950b5867034/musiclogo/fir-4e5597fce325e.png' width="100" height="100" > </a><a href="/police"><img src="http://images.all-free-download.com/images/graphiclarge/gold_police_badge_312998.jpg" width ='100' height="100"  >   </a><a href="/criminals">   <img src="http://i956.photobucket.com/albums/ae44/cris25tpb/LogoCriminals3.jpg" width="100" height="100"> </a><a href="/aboutus"> <img src="http://e-quranlearning.com/wp-content/uploads/2013/06/a_About_Us_logo_SML_yellBG.jpg" width="100" height="100"></a>
+</div>
+<marquee direction="right">A Step Towards Digitization</marquee><br><br>
+<div>{%  for f in case  %}
+
+    <tr>
+        <td> {{ f.crime_type }}</td>
+    <td>{{  f.crime_desc }}</td>
+        <td>{{  f.crime_date}}</td>
+    <td>{{ f.crime_addr}} </td>
+    </tr>
+
+{% endfor %}
+</div>
+
+</body>
+</html>
