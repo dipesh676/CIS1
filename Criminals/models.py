@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class Criminal(models.Model):
-    Name = models.CharField(max_length=100, primary_key=True)
+    Name = models.CharField(max_length=100)
     dob = models.CharField(max_length=100)
     ctznno = models.CharField(max_length=100)
     Gender = models.CharField(max_length=100)
@@ -15,7 +15,7 @@ class Criminal(models.Model):
 
 
 class crime (models.Model):
-    criminal = models.ForeignKey(Criminal)
+    criminal = models.ForeignKey(Criminal, related_name='crime')
     crime_type = models.CharField(max_length=50)
     crime_desc = models.CharField(max_length=200)
     crime_date = models.DateTimeField()

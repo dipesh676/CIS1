@@ -19,5 +19,5 @@ from Criminals import views as CriminalView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^criminal/', CriminalView.index),
-    url(r'^caseinfo/', CriminalView.caseinfo)
+    url(r'^caseinfo/(?P<cid>[0-9]+)/', CriminalView.caseinfo, name='caseinfo')
 ]
