@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Criminal View </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body background="Meditation(3).jpg">
+<div ><h1 align="center"> Criminals Information</h1>
+    <h3><a href="/homes"> <img src ='http://orig03.deviantart.net/0631/f/2010/237/5/d/dock_icon_home_button_by_moa_isa_jediknight.png' width="100" height="100"  >  </a><a href="/fir"> <img src ='https://fanart.tv/fanart/music/a8251b7f-2ea9-4661-89c1-0950b5867034/musiclogo/fir-4e5597fce325e.png' width="100" height="100" > </a><a href="/police"><img src="http://images.all-free-download.com/images/graphiclarge/gold_police_badge_312998.jpg" width ='100' height="100"  >   </a><a href="/criminals">   <img src="http://i956.photobucket.com/albums/ae44/cris25tpb/LogoCriminals3.jpg" width="100" height="100"> </a><a href="/aboutus"> <img src="http://e-quranlearning.com/wp-content/uploads/2013/06/a_About_Us_logo_SML_yellBG.jpg" width="100" height="100"></a>
+    </div>
+    <marquee direction="right">A Step Towards Digitization</marquee><br><br>
+    <div align="center">
+        {% load widget_tweaks %}
+        <div class="container">
+            {% if msg == 1 %}
+            Complaint Submitted!!
+            {% endif %}
+
+            <h3 class="text-center">Complaints</h3>
+            <p class="text-center"><em>Submit your complaints here!</em></p>
+            <div class="row test">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-8">
+                    <form class="form" role="form" method="post">
+                        <div class="row">
+                            {% csrf_token %}
+                            <div class="col-sm-6 form-group">
+                                {% render_field form.c_type class="form-control" id="focusedInput" placeholder="Crime Type" %}
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                {% render_field form.c_addr class="form-control" id="focusedInput" placeholder="Crime Location" %}
+
+                            </div>
+                        </div>
+                        <div>
+                            {% render_field form.report class="form-control" id="focusedInput" placeholder="Full Report" %}
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                {% render_field form.reported_by class="form-control" id="focusedInput" placeholder="Your Name" %}
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                {% render_field form.contact class="form-control" id="focusedInput" placeholder="Your Contact" %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <button class="btn pull-right" type="submit">Submit</button>
+                            </div>
+                        </div> 
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </body>
+        </html>

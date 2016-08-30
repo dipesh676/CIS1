@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Criminals',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

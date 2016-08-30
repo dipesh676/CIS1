@@ -37,4 +37,14 @@ class Victim (models.Model):
     def __str__(self):
         return self.victim_name
 
+class FIR (models.Model):
+    crime_type = models.CharField(max_length=50)
+    crime_addr = models.CharField(max_length=50)
+    full_report = models.CharField(max_length=200)
+    reported_by = models.CharField(max_length=50)
+    contact = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.reported_by
+
 
